@@ -2,7 +2,38 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+	body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    background-color: black;
+    color: white;
+}
+
+.submitButton {
+    background-color: #44c767;
+    border-radius: 28px;
+    border: 1px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Verdana;
+    font-size: 23px;
+    padding: 16px 31px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.submitButton:hover {
+    background-color: #5cbf2a;
+}
+
+.submitButton:active {
+    position: relative;
+    top: 1px;
+}
+    </style>
 </head>
 
 <body>
@@ -11,16 +42,24 @@
     <hr>
     <select name="dropdown" id="dropdownselect">
         <option value="select">Select your promo option</option>
-        <option value="highspending">HIGH SPENDING CUSTOMERS</option>
-        <option value="lowspending">LOW SPENDING CUSTOMERS</option>
-        <option value="medium2spending">MEDIUM FREQUENCY AND MEDIUM SPENDING CUSTOMERS </option>
-        <option value="mediumlowspending">MEDIUM FREQUENCY AND LOW SPENDING CUSTOMERS</option>
-        <option value="specificmerchant">SPECIFIC MERCHANT CATEGORY FOCUSED PROMOTIONS</option>
+        <option onclick="highspending()" value="hi">HIGH SPENDING CUSTOMERS</option>
+        <option value="lo">LOW SPENDING CUSTOMERS</option>
+        <option id="mediumspending2"value="mm">MEDIUM FREQUENCY AND MEDIUM SPENDING CUSTOMERS </option>
+        <option value="ml">MEDIUM FREQUENCY AND LOW SPENDING CUSTOMERS</option>
+        <option value="sp">SPECIFIC MERCHANT CATEGORY FOCUSED PROMOTIONS</option>
 
     </select>
-    <button type="submit" class="submitButton">SUBMIT</button>
-    <a href="darkmode.html">DARK MODE</a>
+        <button type="submit" onclick="submit()" class="submitButton">SUBMIT</button>
+    <p id="demo"></p>
 
+    <a href="darkmode.html">DARK MODE</a>
+<script>
+function submit() {
+  var x = document.getElementById("dropdownselect").value;
+  document.getElementById("dropdownselect").value = x
+  console.log(x)
+}
+    </script>
 
 </body>
 
